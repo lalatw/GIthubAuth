@@ -13,6 +13,7 @@ $(".subbtn").on("click",  function(event) {
         console.log(response);
 
 
+});
 });  
 
 
@@ -20,6 +21,4 @@ $(".subbtn").on("click",  function(event) {
 
 
 // https://lalatw.github.io/GIthubAuth/github/callback?code=c98e75cd13c3dcccbd12&state=active
-
-
 
