@@ -1,6 +1,3 @@
-var express = express
-
-
 $(".subbtn").on("click",  function(event) {
         
     event.preventDefault();
