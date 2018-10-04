@@ -3,13 +3,16 @@ var path = require("path");
 module.exports = function(app) {
     app.get("/", function(req, res) {
         res.sendFile(path.join(__dirname, "./index.html"))});
+    
+    app.get("/main", function(req, res) {
+        res.sendFile(path.join(__dirname, "./main.html"))});
 
     app.get("/github/callback/", function(req, res) {
         console.log("hello");
         res.send("helloLEE");
 
         $.ajax ({
-            url: "https://github.com/login/oauth/access_token?code=ed0f9c98293094f5755b",
+            url: "https://github.com/login/oauth/access_token?code=ed0f9c98293094f5755b?redirect_uri=https://evening-basin-39728.herokuapp.com/main",
             method: "POST"
         }) .then(function(response) {
             console.log(response);
