@@ -6,7 +6,7 @@ module.exports = function(app) {
 
     app.get("/github/callback/", function(req, res) {
         console.log("hello");
-        res.JSON.stringify(res);
+        res.send("helloLEE");
     })
 
 }
