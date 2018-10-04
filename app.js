@@ -7,8 +7,7 @@ $(".subbtn").on("click",  function(event) {
     var email = $(".inputemail").val().trim();
     var pw = $(".inputpw").val().trim();
 
-    var queryURL = "https://github.com/login/oauth/authorize+" + itemName + "&rating=g&limit=10&api_key=TVxQvzKbz76RUCSYfQDXsZU5CHvX6uxY";
-    $("#mainimages").empty();
+    var queryURL = "https://github.com/login/oauth/authorize?client_id=e52b2491623d91b826f2&state=active"
 
     $.ajax ({
         url: queryURL,
@@ -18,3 +17,12 @@ $(".subbtn").on("click",  function(event) {
 
 
 });  
+
+
+// https://lalatw.github.io/GIthubAuth/github/callback
+
+
+// https://lalatw.github.io/GIthubAuth/github/callback?code=c98e75cd13c3dcccbd12&state=active
+
+
+
