@@ -7,7 +7,7 @@ module.exports = function(app) {
     app.get("/main", function(req, res) {
         res.sendFile(path.join(__dirname, "./main.html"))});
 
-    app.get("/github/callback/", function(req, res) {
+    app.get("/callback/", function(req, res) {
         console.log("hello");
         res.send("helloLEE");
 
