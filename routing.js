@@ -11,9 +11,9 @@ module.exports = function(app) {
 
     app.get("/github/callback/", function(req, res) {
         console.log("hello");
-        res.send("helloLEE");
         var code = res.params("code");
         console.log(code);
+        res.send("code: "+ code);
 
         // $.ajax ({
         //     url: "https://github.com/login/oauth/access_token?code=ed0f9c98293094f5755b?redirect_uri=https://evening-basin-39728.herokuapp.com/main",
