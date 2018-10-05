@@ -15,6 +15,7 @@ module.exports = function(app) {
         console.log(session_code);
         res.send("code: "+ session_code);
 
+    }).then(function(responsedata) {
         var newParams = new Object();
         newParams.code=session_code;
         newParams.client_id="e52b2491623d91b826f2";
@@ -25,6 +26,8 @@ module.exports = function(app) {
             url: "https://github.com/login/oauth/access_token",
             method: "POST",
             data: newParams
+
+    })
         }) .then(function(response) {
             console.log(response);
             res.send("response: "+response)
