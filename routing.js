@@ -11,16 +11,25 @@ module.exports = function(app) {
 
     app.get("/github/callback/", function(req, res) {
         console.log("hello");
-        var code = req.query.code;
-        console.log(code);
-        res.send("code: "+ code);
+        var session_code = req.query.code;
+        console.log(session_code);
+        res.send("code: "+ session_code);
 
-        // $.ajax ({
-        //     url: "https://github.com/login/oauth/access_token?code=ed0f9c98293094f5755b?redirect_uri=https://evening-basin-39728.herokuapp.com/main",
-        //     method: "POST"
-        // }) .then(function(response) {
-        //     console.log(response);
-        // });
+        var newParams = new Object();
+        newParams.code=session_code;
+        newParams.client_id="e52b2491623d91b826f2";
+        newParams.client_secret="704548b912277672139d79560c6ef28017a6b3df";
+        // newParams.redirect_uri="https://evening-basin-39728.herokuapp.com/main";
+
+        $.ajax ({
+            url: "https://github.com/login/oauth/access_token",
+            method: "POST",
+            data: newParams
+        }) .then(function(response) {
+            console.log(response);
+            res.send("response: "+response)
+
+        });
 
 
     })
