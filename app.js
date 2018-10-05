@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-$(".subbtn").on("click",  function(event) {   
+$("#subbtn").on("click",  function(event) {   
     event.preventDefault();
     var email = $(".inputemail").val().trim();
     var pw = $(".inputpw").val().trim();
