@@ -29,8 +29,9 @@ module.exports = function(app) {
             body:jsonObj,
             function (error, response, body) {
                 if (!error&&response.statusCode ==200) {
-                    console.log(body)
-                    res.send("response: "+response)
+                    console.log(response);
+                    var access_token=JSON.parse(response)['access_token'];
+                    console.log(access_token);
                 }
             }
 
