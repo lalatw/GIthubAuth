@@ -33,7 +33,7 @@ module.exports = function(app) {
                 if (!error&&response.statusCode ==200) {
                     console.log(response);
                     var access_token=JSON.parse(response.body)['access_token'];
-                    // console.log("AC="+access_token);
+                    console.log("AC="+access_token);
                 }
             }
 
