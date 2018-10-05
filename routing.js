@@ -19,8 +19,8 @@ module.exports = function(app) {
         // redirect_uri="https://evening-basin-39728.herokuapp.com/main"
         var jsonObj = JSON.stringify({
             code: session_code,
-            client_id="e52b2491623d91b826f2",
-            client_secret="704548b912277672139d79560c6ef28017a6b3df"
+            client_id:"e52b2491623d91b826f2",
+            client_secret:"704548b912277672139d79560c6ef28017a6b3df"
     });
         request({
             url:"https://github.com/login/oauth/access_token",
