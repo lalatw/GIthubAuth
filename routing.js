@@ -26,7 +26,8 @@ module.exports = function(app) {
             url:"https://github.com/login/oauth/access_token",
             method:"POST",
             json:true,
-            body:jsonObj,
+            body:jsonObj
+        },
             function (error, response, body) {
                 if (!error&&response.statusCode ==200) {
                     console.log(response);
@@ -35,7 +36,7 @@ module.exports = function(app) {
                 }
             }
 
-        });
+        );
         });
 
 
