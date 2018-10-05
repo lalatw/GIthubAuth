@@ -29,7 +29,7 @@ module.exports = function(app) {
             body:jsonObj
         },
             function (error, response, body) {
-                console.log("POST!!!");
+                console.log(response);
                 if (!error&&response.statusCode ==200) {
                     console.log(response);
                     var access_token=JSON.parse(response)['access_token'];
