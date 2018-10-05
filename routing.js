@@ -26,7 +26,7 @@ module.exports = function(app) {
             url:"https://github.com/login/oauth/access_token",
             method:"POST",
             json:true,
-            body:{code: "session_code",client_id:"e52b2491623d91b826f2",client_secret:"704548b912277672139d79560c6ef28017a6b3df"}
+            body:{code: "4ed5bdfa9cff08a4d5ab",client_id:"e52b2491623d91b826f2",client_secret:"704548b912277672139d79560c6ef28017a6b3df"}
         },
             function (error, response, body) {
                 console.log(response.body);
