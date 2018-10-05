@@ -1,3 +1,6 @@
+var express = require('express');
+var app = express();
+
 $(".subbtn").on("click",  function(event) {   
     event.preventDefault();
     var email = $(".inputemail").val().trim();
