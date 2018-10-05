@@ -17,23 +17,23 @@ module.exports = function(app) {
         console.log(session_code);
         res.send("code: "+ session_code);
         // redirect_uri="https://evening-basin-39728.herokuapp.com/main"
-        var jsonObj = JSON.stringify({
-            code: "8b6d87c8d12080f78310",
-            client_id:"e52b2491623d91b826f2",
-            client_secret:"704548b912277672139d79560c6ef28017a6b3df"
-    });
+    //     var jsonObj = JSON.stringify({
+    //         code: "8b6d87c8d12080f78310",
+    //         client_id:"e52b2491623d91b826f2",
+    //         client_secret:"704548b912277672139d79560c6ef28017a6b3df"
+    // });
         request({
             url:"https://github.com/login/oauth/access_token",
             method:"POST",
             json:true,
-            body:{code: "4ed5bdfa9cff08a4d5ab",client_id:"e52b2491623d91b826f2",client_secret:"704548b912277672139d79560c6ef28017a6b3df"}
+            body:{code: session_code,client_id:"e52b2491623d91b826f2",client_secret:"704548b912277672139d79560c6ef28017a6b3df"}
         },
             function (error, response, body) {
                 console.log(response.body);
                 if (!error&&response.statusCode ==200) {
                     console.log(response);
                     var access_token=JSON.parse(response.body)['access_token'];
-                    console.log(access_token);
+                    console.log("AC="+access_token);
                 }
             }
 
