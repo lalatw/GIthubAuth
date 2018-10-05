@@ -32,8 +32,8 @@ module.exports = function(app) {
                 console.log(response.body);
                 if (!error&&response.statusCode ==200) {
                     console.log(response);
-                    var access_token=JSON.parse(response)['access_token'];
-                    console.log("AC="+access_token);
+                    //var access_token=JSON.parse(response)['access_token'];
+                    console.log("AC="+response.body.access_token);
                 }
             }
 
