@@ -18,7 +18,7 @@ module.exports = function(app) {
         res.send("code: "+ session_code);
         // redirect_uri="https://evening-basin-39728.herokuapp.com/main"
         var jsonObj = JSON.stringify({
-            code: session_code,
+            code: "8b6d87c8d12080f78310",
             client_id:"e52b2491623d91b826f2",
             client_secret:"704548b912277672139d79560c6ef28017a6b3df"
     });
