@@ -11,7 +11,7 @@ module.exports = function(app) {
 
     app.get("/github/callback/", function(req, res) {
         console.log("hello");
-        var code = res.params("code");
+        var code = req.query.code;
         console.log(code);
         res.send("code: "+ code);
 
