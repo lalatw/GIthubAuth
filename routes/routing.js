@@ -6,10 +6,10 @@ var request = require("request");
 
 module.exports = function(app) {
     app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "./index.html"))});
+        res.sendFile(path.join(__dirname, "../public/index.html"))});
     
     app.get("/main", function(req, res) {
-        res.sendFile(path.join(__dirname, "./main.html"))});
+        res.sendFile(path.join(__dirname, "../public/main.html"))});
 
     app.get("/github/callback/", function(req, res) {
         console.log("hello");
