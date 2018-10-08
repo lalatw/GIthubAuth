@@ -8,7 +8,7 @@ module.exports = function(app) {
     app.get("/", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/index.html"))});
     
-    app.get("/main", function(req, res) {
+    app.get("/github/callback/main", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/main.html"))});
 
     app.get("/github/callback/", function(req, res) {
@@ -26,7 +26,7 @@ module.exports = function(app) {
             url:"https://github.com/login/oauth/access_token",
             method:"POST",
             json:true,
-            body:{code: session_code,client_id:"e52b2491623d91b826f2",client_secret:"704548b912277672139d79560c6ef28017a6b3df",accept:"json"}
+            body:{code: session_code,client_id:"e52b2491623d91b826f2",client_secret:"704548b912277672139d79560c6ef28017a6b3df",accept:"json",redirect_uri:"https://evening-basin-39728.herokuapp.com/github/callback/main"}
         },
             function (error, response, body) {
                 console.log(response.body);
