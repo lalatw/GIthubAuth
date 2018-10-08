@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var request = require("request");
 
+$(document).ready(function() {
 $("#subbtn").on("click",  function(event) {   
     event.preventDefault();
     var email = $(".inputemail").val().trim();
@@ -23,4 +24,4 @@ $("#subbtn").on("click",  function(event) {
     });
 });  
 
-
+})
