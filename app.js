@@ -6,7 +6,7 @@ $("#subbtn").on("click",  function(event) {
     event.preventDefault();
     var email = $(".inputemail").val().trim();
     var pw = $(".inputpw").val().trim();
-
+    console.log("click");
     var queryURL = "https://github.com/login/oauth/authorize?client_id=e52b2491623d91b826f2&state=active";
 
 
