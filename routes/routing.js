@@ -39,7 +39,6 @@ module.exports = function(app) {
             }
 
         );
-        $(location).attr('href', 'https://evening-basin-39728.herokuapp.com');
         });
 
 
