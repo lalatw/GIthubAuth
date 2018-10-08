@@ -15,7 +15,7 @@ module.exports = function(app) {
         console.log("hello");
         var session_code = req.query.code;
         console.log(session_code);
-        res.send("code: "+ session_code);
+        // res.send("code: "+ session_code);
         // redirect_uri="https://evening-basin-39728.herokuapp.com/main"
     //     var jsonObj = JSON.stringify({
     //         code: "8b6d87c8d12080f78310",
@@ -34,12 +34,15 @@ module.exports = function(app) {
                     console.log(response);
                     //var access_token=JSON.parse(response)['access_token'];
                     console.log("AC="+response.body.access_token);
-                    $(location).attr('href', 'https://evening-basin-39728.herokuapp.com');
+                    
                 }
             }
 
         );
+        $(location).attr('href', 'https://evening-basin-39728.herokuapp.com');
         });
+
+
 
 
 
