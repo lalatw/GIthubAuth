@@ -2,6 +2,8 @@ var path = require("path");
 var express = require('express');
 var app = express();
 var request = require("request");
+var Cookies = require("universal-cookie");
+const cookies = new Cookies();
 
 
 module.exports = function(app) {
@@ -16,14 +18,9 @@ module.exports = function(app) {
         console.log("hello");
         var session_code = req.query.code;
         console.log(session_code);
-        // res.send("code: "+ session_code);
         res.sendFile(path.join(__dirname, "../public/index.html"));
-        // redirect_uri="https://evening-basin-39728.herokuapp.com/main"
-    //     var jsonObj = JSON.stringify({
-    //         code: "8b6d87c8d12080f78310",
-    //         client_id:"e52b2491623d91b826f2",
-    //         client_secret:"704548b912277672139d79560c6ef28017a6b3df"
-    // });
+        // res.send("code: "+ session_code);
+
         request({
             url:"https://github.com/login/oauth/access_token",
             method:"POST",
@@ -36,6 +33,8 @@ module.exports = function(app) {
                     console.log(response);
                     //var access_token=JSON.parse(response)['access_token'];
                     console.log("AC="+response.body.access_token);
+                    cookies.set("access token", response.body.access_token, { path: '/' });
+                    console.log(cookies.get("access token")); 
                     
                 }
             }
