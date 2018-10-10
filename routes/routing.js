@@ -43,7 +43,23 @@ module.exports = function(app) {
         });
 
 
+    app.get("/user", function(req, res) {
 
+        var access_token=cookies.get("access token");
+        console.log(cookies.get("access token")); 
+        console.log(access_token);
+        
+        request({
+            url:"https://api.github.com/user?access_token="+access_token,
+            method:"GET"
+        },
+
+            function(error, response, body) {
+                console.log(response.body)
+            }
+
+        );
+    });
 
 
 
