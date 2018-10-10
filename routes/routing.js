@@ -35,6 +35,29 @@ module.exports = function(app) {
                     console.log("AC="+response.body.access_token);
                     cookies.set("access token", response.body.access_token, { path: '/' });
                     console.log(cookies.get("access token")); 
+
+                    var access_token=cookies.get("access token");
+                    console.log(access_token);
+            
+                    request({
+                        url:"https://api.github.com/user?access_token="+access_token,
+                        method:"GET",
+                        json:true,
+                        headers: {
+                            "User-Agent": "request"
+                        }
+                    },
+            
+                        function(error, response, body) {
+                            console.log(response.body)
+                            cookies.set("login", response.body.login, { path: '/'});
+                            console.log(cookies.get("login"));
+                            // $(location).attr("href", "https://evening-basin-39728.herokuapp.com/");
+                            Window.location="https://evening-basin-39728.herokuapp.com/";
+            
+                        }
+            
+                    );
                     
                 }
             }
@@ -43,31 +66,31 @@ module.exports = function(app) {
         });
 
 
-    app.get("/user", function(req, res) {
+    // app.get("/user", function(req, res) {
 
-        var access_token=cookies.get("access token");
-        console.log(access_token);
+    //     var access_token=cookies.get("access token");
+    //     console.log(access_token);
 
-        request({
-            url:"https://api.github.com/user?access_token="+access_token,
-            method:"GET",
-            json:true,
-            headers: {
-                "User-Agent": "request"
-            }
-        },
+    //     request({
+    //         url:"https://api.github.com/user?access_token="+access_token,
+    //         method:"GET",
+    //         json:true,
+    //         headers: {
+    //             "User-Agent": "request"
+    //         }
+    //     },
 
-            function(error, response, body) {
-                console.log(response.body)
-                cookies.set("login", response.body.login, { path: '/'});
-                console.log(cookies.get("login"));
-                // $(location).attr("href", "https://evening-basin-39728.herokuapp.com/");
-                Window.location="https://evening-basin-39728.herokuapp.com/";
+    //         function(error, response, body) {
+    //             console.log(response.body)
+    //             cookies.set("login", response.body.login, { path: '/'});
+    //             console.log(cookies.get("login"));
+    //             // $(location).attr("href", "https://evening-basin-39728.herokuapp.com/");
+    //             Window.location="https://evening-basin-39728.herokuapp.com/";
 
-            }
+    //         }
 
-        );
-    });
+    //     );
+    // });
 
 
 
