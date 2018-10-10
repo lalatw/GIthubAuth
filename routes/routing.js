@@ -48,10 +48,13 @@ module.exports = function(app) {
         var access_token=cookies.get("access token");
         console.log(cookies.get("access token")); 
         console.log(access_token);
-        
+
         request({
             url:"https://api.github.com/user?access_token="+access_token,
-            method:"GET"
+            method:"GET",
+            headers: {
+                "User-Agent": "request"
+            }
         },
 
             function(error, response, body) {
