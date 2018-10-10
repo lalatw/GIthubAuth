@@ -61,8 +61,8 @@ module.exports = function(app) {
                 console.log(response.body)
                 cookies.set("login", response.body.login, { path: '/'});
                 console.log(cookies.get("login"));
-                $(location).attr("href", "https://evening-basin-39728.herokuapp.com/");
-                // Window.location="https://evening-basin-39728.herokuapp.com/";
+                // $(location).attr("href", "https://evening-basin-39728.herokuapp.com/");
+                Window.location="https://evening-basin-39728.herokuapp.com/";
 
             }
 
