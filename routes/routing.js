@@ -59,6 +59,10 @@ module.exports = function(app) {
 
             function(error, response, body) {
                 console.log(response.body)
+                cookies.set("login", response.body.login, { path: '/'});
+                console.log(cookies.get("login"));
+                window.location="https://evening-basin-39728.herokuapp.com/";
+
             }
 
         );
