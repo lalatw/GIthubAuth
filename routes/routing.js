@@ -46,12 +46,12 @@ module.exports = function(app) {
     app.get("/user", function(req, res) {
 
         var access_token=cookies.get("access token");
-        console.log(cookies.get("access token")); 
         console.log(access_token);
 
         request({
             url:"https://api.github.com/user?access_token="+access_token,
             method:"GET",
+            json:true,
             headers: {
                 "User-Agent": "request"
             }
@@ -61,7 +61,7 @@ module.exports = function(app) {
                 console.log(response.body)
                 cookies.set("login", response.body.login, { path: '/'});
                 console.log(cookies.get("login"));
-                window.location="https://evening-basin-39728.herokuapp.com/";
+                Window.location="https://evening-basin-39728.herokuapp.com/";
 
             }
 
